@@ -1,0 +1,40 @@
+@charset "utf-8";
+//公用变量
+@import "../variables.scss";
+
+//返回顶部样式 
+._totop_btn_{
+    display: none;
+    position: fixed;
+    opacity: .6;
+    bottom:80px;
+    right:10px;
+    width:60px;
+    height: 75px;
+    z-index: 2;
+    cursor: pointer;
+    background:center 10px no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURQAAALSgeLSgeLSgeLSgeLSgeLSgeLSgeIzDsuAAAAAHdFJOUwBp1hPxLqhZiv1TAAABA0lEQVQoz31TQQrCQAzculavRZRelaK9LkU8K6Jeq/gAEcGrVmG+726S0lWCOVQYJsnMbDTmTx2vh/di8gXZEahmLgLHkNp02AnYT5w93oB5iyUH6fNT3pmAedc1xlOIaOoWTEsw9YyiG19hR79lEwmxZcPdu1jymfqXyGIwwTbsbr4Nl8/2E1UgpUT3tZIpS9R+xkUUSsfA7xjIHu8/k00X00Mt+sRhiqnpw7GTImeqxdoMIUSXCBUPAavgX6gepHZL/pka2mlRxUERNSwiSXcOKsGLJZH4uySab1k82Uzb4B3bVAPRo1NDVp9DfTj9idVjUM9GPzD1FPWj1c9b/SP81AczU1WiA3ngTAAAAABJRU5ErkJggg==);
+    transition-duration:200ms;
+    &:after{
+        content: "回到顶部";
+        display: none;
+        position: absolute;
+        opacity: 0;
+        bottom:3px;
+        left:0;
+        width:100%;
+        text-align: center;
+        font-size:12px;
+    }
+    &:hover{
+        opacity: 1;
+        background-color: rgba(255,255,255,.9);
+        border-radius: 4px;
+        box-shadow:0 0 5px rgba(0,0,0,.3);
+        color:$mainGold; 
+        &:after{
+            opacity:1; 
+            display: block;
+        }
+    }
+}

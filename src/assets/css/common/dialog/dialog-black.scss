@@ -1,0 +1,95 @@
+@charset "utf-8";
+//公用变量
+@import "../variables.scss";
+
+//dialog中间弹出层
+._fixed-dialog_{ 
+    display: none; 
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    z-index: 10;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,.2);
+    >*{
+        position: relative;
+        pointer-events: auto;
+        background: rgba(0,0,0,.8);
+        color: #ddd;
+        border-radius:8px;
+        /*overflow: hidden;*/
+        >.fixed-title{
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #eee;
+            border-radius: 3px 3px 0 0;
+            &.title-center{
+                text-align: center;
+            }
+            >*{
+                &:first-child{
+                    min-width:200px;
+                    padding:0 15px;
+                    +*{
+                        display: block;
+                        position: absolute;
+                        text-align: center;
+                        top:0;
+                        right: 0;
+                        height: 100%;
+                        width:40px;
+                        background: center no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUAgMAAADw5/WeAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURQAAAJqampmZma1He1gAAAADdFJOUwAw4IU6EFUAAAA9SURBVAjXY2DAAEwODIwNDIwTGNgcGBhSGCSBQpJAmoGBzXECkGSc5gBSlckAJyEiEFmISrAuiAkQ0zAAAC3KCVe2e84HAAAAAElFTkSuQmCC);
+                        &:hover{
+                            background-color: #f6f6f6;
+                        }
+                    }
+                }
+            }
+        }
+        .fixed-content{
+            height: 80%;
+            border-bottom:1px solid rgba(0,0,0,.4);
+            text-align: center;
+            >*{
+                margin:30px 20px;
+            }
+        }
+        .fixed-button{
+            text-align: center;
+            border-top:1px solid rgba(255,255,255,.05);
+            button{
+                position: relative;
+                top:-1px;
+                border:none;
+                background: none;
+                color: #ddd;
+                padding:15px 40px;
+                cursor:pointer;
+                border-right:1px solid rgba(0,0,0,.4);
+                border-left:1px solid rgba(255,255,255,.05);
+                &:hover{
+                    box-shadow: 10em 10em 10em rgba(0,0,0,.3) inset;
+                    border-left:1px solid rgba(0,0,0,.3);
+                }
+                &:disabled{
+                    background: #CCC;
+                    color: #999;
+                    border-color:#CCC;
+                    cursor:default; 
+                    &:hover{
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+    //轻提示默认样式
+    &._tip_{
+        z-index: 100000;
+        .fixed-content{
+            padding:0px 30px;
+        }
+    }
+}
